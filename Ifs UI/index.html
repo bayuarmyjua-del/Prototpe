@@ -1,0 +1,1527 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Meta Tags -->
+    <title>Ijol-Ijol - Bertukar Tanpa Beban | Platform Barter Online Indonesia</title>
+    <meta name="description" content="Platform barter online terpercaya untuk hasil panen pertanian, perikanan, dan perabotan rumah tangga. Bertukar Tanpa Beban.">
+    <meta name="keywords" content="barter online, pertanian, perikanan, rumah tangga, tukar barang, hasil bumi, ijol-ijol">
+    <meta name="author" content="Ijol-Ijol Team">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://ijol-ijol.com">
+    <meta property="og:title" content="Ijol-Ijol - Bertukar Tanpa Beban">
+    <meta property="og:description" content="Platform barter online untuk hasil panen pertanian, perikanan, dan perabotan rumah tangga">
+    <meta property="og:image" content="https://ijol-ijol.com/og-image.jpg">
+    <meta property="og:site_name" content="Ijol-Ijol">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://ijol-ijol.com">
+    <meta name="twitter:title" content="Ijol-Ijol - Bertukar Tanpa Beban">
+    <meta name="twitter:description" content="Platform barter online untuk hasil panen pertanian, perikanan, dan perabotan rumah tangga">
+    <meta name="twitter:image" content="https://ijol-ijol.com/og-image.jpg">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌱</text></svg>">
+    
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="data:application/json;base64,ewogICJuYW1lIjogIklqb2wtSWpvbCAtIEJlcnR1ayBUYW5wYSBCZWJhbiIsCiAgInNob3J0X25hbWUiOiAiSWpvbC1Jam9sIiwKICAiZGVzY3JpcHRpb24iOiAiUGxhdGZvcm0gYmFydGVyIG9ubGluZSBJbmRvbmVzaWEiLAogICJzdGFydF91cmwiOiAiLyIsCiAgImRpc3BsYXkiOiAic3RhbmRhbG9uZSIsCiAgImJhY2tncm91bmRfY29sb3IiOiAiI2ZmZmZmZiIsCiAgInRoZW1lX2NvbG9yIjogIiMyZTdkMzIiLAogICJpY29ucyI6IFsKICAgIHsKICAgICAgInNyYyI6ICJpY29uLTE5MngxOTIucG5nIiwKICAgICAgInNpemVzIjogIjE5MngxOTIiLAogICAgICAidHlwZSI6ICJpbWFnZS9wbmciCiAgICB9LAogICAgewogICAgICAic3JjIjogImljb24tNTEyNTEyLnBuZyIsCiAgICAgICJzaXplcyI6ICI1MTJ1NTEyIiwKICAgICAgInR5cGUiOiAiaW1hZ2UvcG5nIgogICAgfQogIF0KfQ==">
+    
+    <!-- Preconnect for Performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <style>
+        :root {
+            --primary: #2e7d32;
+            --primary-light: #4caf50;
+            --primary-dark: #1b5e20;
+            --secondary: #ff9800;
+            --accent: #8bc34a;
+            --light: #f1f8e9;
+            --dark: #263238;
+            --gray: #78909c;
+            --white: #ffffff;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --radius: 8px;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: var(--primary);
+            border-radius: 4px;
+        }
+        
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--primary-dark);
+        }
+        
+        /* Loading animation */
+        .loader {
+            border: 3px solid #f3f3f3;
+            border-top: 3px solid var(--primary);
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin: 20px auto;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        /* Floating Action Buttons */
+        .fab {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 60px;
+            height: 60px;
+            background-color: var(--secondary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            cursor: pointer;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+        
+        .fab:hover {
+            transform: scale(1.1);
+            background-color: #e68900;
+        }
+        
+        .wa-fab {
+            position: fixed;
+            bottom: 90px;
+            right: 20px;
+            width: 50px;
+            height: 50px;
+            background-color: #25D366;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            cursor: pointer;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+        
+        .wa-fab:hover {
+            transform: scale(1.1);
+        }
+        
+        /* Notification Toast */
+        .toast {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background-color: var(--primary);
+            color: white;
+            padding: 15px 20px;
+            border-radius: var(--radius);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            z-index: 2000;
+            transform: translateX(400px);
+            transition: transform 0.3s ease;
+        }
+        
+        .toast.show {
+            transform: translateX(0);
+        }
+        
+        /* Hero section dengan background pattern */
+        .hero-pattern {
+            background-color: var(--primary);
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+        
+        /* Category cards */
+        .category-card {
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .category-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Product cards */
+        .product-card {
+            transition: all 0.3s ease;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Badge styles */
+        .badge {
+            position: absolute;
+            top: 10px;
+            z-index: 10;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+        
+        .badge-barter {
+            left: 10px;
+            background-color: var(--primary);
+            color: white;
+        }
+        
+        .badge-price {
+            right: 10px;
+            background-color: var(--secondary);
+            color: white;
+        }
+        
+        /* Modal styles */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            backdrop-filter: blur(5px);
+        }
+        
+        .modal.active {
+            display: flex;
+        }
+        
+        .modal-content {
+            background-color: white;
+            border-radius: var(--radius);
+            width: 90%;
+            max-width: 500px;
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+            animation: modalSlideIn 0.3s ease;
+        }
+        
+        @keyframes modalSlideIn {
+            from {
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+        
+        /* Mobile menu */
+        .mobile-menu {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: white;
+            z-index: 999;
+            padding-top: 70px;
+            transform: translateX(-100%);
+            transition: transform 0.3s ease;
+        }
+        
+        .mobile-menu.active {
+            transform: translateX(0);
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem !important;
+            }
+            
+            .category-grid {
+                grid-template-columns: repeat(2, 1fr) !important;
+            }
+            
+            .product-grid {
+                grid-template-columns: repeat(2, 1fr) !important;
+                gap: 15px !important;
+            }
+            
+            .modal-content {
+                width: 95%;
+                margin: 10px;
+            }
+        }
+        
+        /* Print styles */
+        @media print {
+            .no-print {
+                display: none !important;
+            }
+        }
+        
+        /* Custom animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .animate-fade-in {
+            animation: fadeIn 0.6s ease-out;
+        }
+        
+        /* Product detail modal */
+        .product-detail-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 1001;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            backdrop-filter: blur(5px);
+        }
+        
+        .product-detail-modal.active {
+            display: flex;
+        }
+        
+        .product-detail-content {
+            background-color: white;
+            border-radius: var(--radius);
+            width: 90%;
+            max-width: 800px;
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+            animation: modalSlideIn 0.3s ease;
+        }
+        
+        /* No results message */
+        .no-results {
+            text-align: center;
+            padding: 40px;
+            color: var(--gray);
+        }
+        
+        .no-results i {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            color: var(--primary-light);
+        }
+    </style>
+</head>
+<body>
+    <!-- Skip to main content for accessibility -->
+    <a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-white px-4 py-2 rounded-md">Skip to main content</a>
+    
+    <!-- Header/Navigation -->
+    <header class="bg-white shadow-md sticky top-0 z-50 no-print">
+        <nav class="container mx-auto px-4 py-3">
+            <div class="flex justify-between items-center">
+                <!-- Logo -->
+                <div class="flex items-center space-x-2">
+                    <div class="w-10 h-10 bg-green-600 rounded-full flex items-center justify-center">
+                        <i class="fas fa-exchange-alt text-white text-xl"></i>
+                    </div>
+                    <div>
+                        <h1 class="text-xl font-bold text-green-800">Ijol-Ijol</h1>
+                        <p class="text-xs text-gray-600">Bertukar Tanpa Beban</p>
+                    </div>
+                </div>
+                
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-6">
+                    <a href="#beranda" class="text-gray-700 hover:text-green-600 transition-colors">
+                        <i class="fas fa-home mr-1"></i> Beranda
+                    </a>
+                    <a href="#kategori" class="text-gray-700 hover:text-green-600 transition-colors">
+                        <i class="fas fa-th-large mr-1"></i> Kategori
+                    </a>
+                    <a href="#cara-kerja" class="text-gray-700 hover:text-green-600 transition-colors">
+                        <i class="fas fa-info-circle mr-1"></i> Cara Kerja
+                    </a>
+                    <a href="#" onclick="openModal()" class="bg-green-600 text-white px-4 py-2 rounded-full hover:bg-green-700 transition-colors">
+                        <i class="fas fa-plus mr-1"></i> Jual
+                    </a>
+                </div>
+                
+                <!-- Mobile menu button -->
+                <button class="md:hidden text-gray-700" onclick="toggleMobileMenu()">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </nav>
+    </header>
+    
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="p-4 space-y-4">
+            <a href="#beranda" class="block text-gray-700 hover:text-green-600 py-2" onclick="toggleMobileMenu()">
+                <i class="fas fa-home mr-2"></i> Beranda
+            </a>
+            <a href="#kategori" class="block text-gray-700 hover:text-green-600 py-2" onclick="toggleMobileMenu()">
+                <i class="fas fa-th-large mr-2"></i> Kategori
+            </a>
+            <a href="#cara-kerja" class="block text-gray-700 hover:text-green-600 py-2" onclick="toggleMobileMenu()">
+                <i class="fas fa-info-circle mr-2"></i> Cara Kerja
+            </a>
+            <a href="#" onclick="openModal(); toggleMobileMenu();" class="block bg-green-600 text-white px-4 py-2 rounded-full text-center">
+                <i class="fas fa-plus mr-1"></i> Jual
+            </a>
+        </div>
+    </div>
+    
+    <!-- Hero Section -->
+    <section id="beranda" class="hero-pattern text-white py-20 md:py-32">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-4xl md:text-6xl font-bold mb-4 animate-fade-in">
+                Ijol-Ijol - Bertukar Tanpa Beban
+            </h1>
+            <p class="text-xl md:text-2xl mb-8 opacity-90 max-w-3xl mx-auto">
+                Platform barter online terpercaya untuk hasil panen pertanian, perikanan, dan perabotan rumah tangga
+            </p>
+            
+            <!-- Search Bar -->
+            <div class="max-w-2xl mx-auto relative">
+                <input 
+                    type="text" 
+                    id="searchInput"
+                    placeholder="Cari barang yang ingin ditukar..." 
+                    class="w-full px-6 py-4 rounded-full text-gray-800 text-lg shadow-lg focus:outline-none focus:ring-4 focus:ring-green-300"
+                    onkeyup="searchProducts(event)"
+                >
+                <button 
+                    onclick="searchProducts()"
+                    class="absolute right-2 top-1/2 transform -translate-y-1/2 bg-orange-500 text-white w-12 h-12 rounded-full hover:bg-orange-600 transition-colors"
+                >
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+            
+            <!-- Quick Stats -->
+            <div class="grid grid-cols-3 gap-4 mt-12 max-w-2xl mx-auto">
+                <div class="text-center">
+                    <div class="text-3xl font-bold">10K+</div>
+                    <div class="text-sm opacity-80">Pengguna Aktif</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-3xl font-bold">5K+</div>
+                    <div class="text-sm opacity-80">Transaksi/Hari</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-3xl font-bold">98%</div>
+                    <div class="text-sm opacity-80">Kepuasan</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Categories Section -->
+    <section id="kategori" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center text-green-800 mb-12">Kategori Produk</h2>
+            
+            <div class="category-grid grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-4">
+                <div class="category-card bg-white p-6 rounded-lg shadow-md text-center" onclick="filterByCategory('Pertanian')">
+                    <i class="fas fa-seedling text-4xl text-green-600 mb-3"></i>
+                    <h3 class="font-semibold">Pertanian</h3>
+                </div>
+                <div class="category-card bg-white p-6 rounded-lg shadow-md text-center" onclick="filterByCategory('Perikanan')">
+                    <i class="fas fa-fish text-4xl text-blue-600 mb-3"></i>
+                    <h3 class="font-semibold">Perikanan</h3>
+                </div>
+                <div class="category-card bg-white p-6 rounded-lg shadow-md text-center" onclick="filterByCategory('Alat Tanam')">
+                    <i class="fas fa-tools text-4xl text-gray-600 mb-3"></i>
+                    <h3 class="font-semibold">Alat Tanam</h3>
+                </div>
+                <div class="category-card bg-white p-6 rounded-lg shadow-md text-center" onclick="filterByCategory('Rumah Tangga')">
+                    <i class="fas fa-home text-4xl text-purple-600 mb-3"></i>
+                    <h3 class="font-semibold">Rumah Tangga</h3>
+                </div>
+                <div class="category-card bg-white p-6 rounded-lg shadow-md text-center" onclick="filterByCategory('Hasil Bumi')">
+                    <i class="fas fa-leaf text-4xl text-green-500 mb-3"></i>
+                    <h3 class="font-semibold">Hasil Bumi</h3>
+                </div>
+                <div class="category-card bg-white p-6 rounded-lg shadow-md text-center" onclick="filterByCategory('Buah-buahan')">
+                    <i class="fas fa-apple-alt text-4xl text-red-500 mb-3"></i>
+                    <h3 class="font-semibold">Buah-buahan</h3>
+                </div>
+                <div class="category-card bg-white p-6 rounded-lg shadow-md text-center" onclick="filterByCategory('Sayuran')">
+                    <i class="fas fa-carrot text-4xl text-orange-500 mb-3"></i>
+                    <h3 class="font-semibold">Sayuran</h3>
+                </div>
+                <div class="category-card bg-white p-6 rounded-lg shadow-md text-center" onclick="filterByCategory('Lainnya')">
+                    <i class="fas fa-ellipsis-h text-4xl text-gray-500 mb-3"></i>
+                    <h3 class="font-semibold">Lainnya</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Products Section -->
+    <section class="py-16">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center mb-8">
+                <h2 class="text-3xl font-bold text-green-800" id="itemsTitle">Produk Unggulan</h2>
+                
+                <div class="filter-buttons flex space-x-2 mt-4 md:mt-0">
+                    <button class="filter-btn px-4 py-2 rounded-full bg-green-600 text-white" onclick="resetFilter()">Semua</button>
+                    <button class="filter-btn px-4 py-2 rounded-full bg-gray-200 text-gray-700" onclick="filterByCategory('Pertanian')">Pertanian</button>
+                    <button class="filter-btn px-4 py-2 rounded-full bg-gray-200 text-gray-700" onclick="filterByCategory('Perikanan')">Perikanan</button>
+                    <button class="filter-btn px-4 py-2 rounded-full bg-gray-200 text-gray-700" onclick="filterByCategory('Alat Tanam')">Alat Tanam</button>
+                </div>
+            </div>
+            
+            <div class="product-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6" id="productGrid">
+                <!-- Products will be dynamically loaded here -->
+            </div>
+            
+            <div class="no-results py-12 hidden" id="noResults">
+                <i class="fas fa-search text-6xl text-gray-300 mb-4"></i>
+                <h3 class="text-xl font-semibold text-gray-600 mb-2">Tidak ada produk ditemukan</h3>
+                <p class="text-gray-500">Coba kata kunci lain atau kategori yang berbeda</p>
+            </div>
+            
+            <!-- Load More Button -->
+            <div class="text-center mt-8">
+                <button class="bg-green-600 text-white px-8 py-3 rounded-full hover:bg-green-700 transition-colors">
+                    Muat Lebih Banyak <i class="fas fa-chevron-down ml-2"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+    
+    <!-- How It Works Section -->
+    <section id="cara-kerja" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center text-green-800 mb-12">Cara Kerja Ijol-Ijol</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="text-center">
+                    <div class="w-20 h-20 bg-green-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-user-plus text-white text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">1. Daftar Akun</h3>
+                    <p class="text-gray-600">Buat akun gratis untuk mulai menggunakan platform Ijol-Ijol</p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="w-20 h-20 bg-green-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-camera text-white text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">2. Upload Produk</h3>
+                    <p class="text-gray-600">Ambil foto dan deskripsi produk yang ingin ditukar atau dijual</p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="w-20 h-20 bg-green-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-exchange-alt text-white text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">3. Tawar Barter</h3>
+                    <p class="text-gray-600">Tawarkan barang Anda atau uang tunai untuk produk yang diinginkan</p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="w-20 h-20 bg-green-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-handshake text-white text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">4. Kesepakatan</h3>
+                    <p class="text-gray-600">Temukan kesepakatan dan lakukan transaksi dengan aman</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Testimonials Section -->
+    <section class="py-16 bg-green-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center text-green-800 mb-12">Apa Kata Mereka</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="testimonial-card bg-white p-6 rounded-lg shadow-md">
+                    <i class="fas fa-quote-right text-4xl text-green-200 absolute top-4 right-4"></i>
+                    <p class="text-gray-700 mb-6 relative z-10">
+                        "Saya bisa menukar hasil panen saya dengan alat pertanian yang saya butuhkan. Sangat membantu sekali!"
+                    </p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-green-600 rounded-full flex items-center justify-center text-white font-bold mr-4">
+                            P
+                        </div>
+                        <div>
+                            <h4 class="font-semibold">Pak Budi</h4>
+                            <p class="text-sm text-gray-600">Petani</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card bg-white p-6 rounded-lg shadow-md">
+                    <i class="fas fa-quote-right text-4xl text-green-200 absolute top-4 right-4"></i>
+                    <p class="text-gray-700 mb-6 relative z-10">
+                        "Hasil tangkapan ikan saya laku dan bisa ditukar dengan kebutuhan rumah tangga. Praktis!"
+                    </p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-green-600 rounded-full flex items-center justify-center text-white font-bold mr-4">
+                            I
+                        </div>
+                        <div>
+                            <h4 class="font-semibold">Ibu Siti</h4>
+                            <p class="text-sm text-gray-600">Penjual Ikan</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card bg-white p-6 rounded-lg shadow-md">
+                    <i class="fas fa-quote-right text-4xl text-green-200 absolute top-4 right-4"></i>
+                    <p class="text-gray-700 mb-6 relative z-10">
+                        "Saya tidak perlu khawatir dengan uang tunai, bisa langsung tukar dengan produk yang saya butuhkan."
+                    </p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-green-600 rounded-full flex items-center justify-center text-white font-bold mr-4">
+                            A
+                        </div>
+                        <div>
+                            <h4 class="font-semibold">Pak Ahmad</h4>
+                            <p class="text-sm text-gray-600">Pengguna</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- CTA Section -->
+    <section class="py-16 bg-gradient-to-r from-green-600 to-green-800 text-white">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4">Siap Mulai Bertukar?</h2>
+            <p class="text-xl mb-8 max-w-2xl mx-auto opacity-90">
+                Bergabunglah dengan ribuan pengguna yang telah merasakan kemudahan barter di Ijol-Ijol
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <button onclick="openModal()" class="bg-white text-green-700 px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition-colors">
+                    <i class="fas fa-user-plus mr-2"></i> Daftar Sekarang
+                </button>
+                <a href="#kategori" class="bg-transparent border-2 border-white text-white px-8 py-3 rounded-full font-semibold hover:bg-white hover:text-green-700 transition-colors">
+                    <i class="fas fa-search mr-2"></i> Jelajahi Produk
+                </a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <div class="flex items-center space-x-2 mb-4">
+                        <div class="w-10 h-10 bg-green-600 rounded-full flex items-center justify-center">
+                            <i class="fas fa-exchange-alt text-white"></i>
+                        </div>
+                        <h3 class="text-xl font-bold">Ijol-Ijol</h3>
+                    </div>
+                    <p class="text-gray-400">
+                        Platform barter online untuk hasil panen pertanian, perikanan, dan perabotan rumah tangga. Bertukar Tanpa Beban.
+                    </p>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold mb-4">Menu</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#beranda" class="hover:text-white transition-colors">Beranda</a></li>
+                        <li><a href="#kategori" class="hover:text-white transition-colors">Kategori</a></li>
+                        <li><a href="#cara-kerja" class="hover:text-white transition-colors">Cara Kerja</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Blog</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold mb-4">Bantuan</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white transition-colors">FAQ</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Hubungi Kami</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Kebijakan Privasi</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Syarat & Ketentuan</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold mb-4">Ikuti Kami</h4>
+                    <div class="flex space-x-4 mb-4">
+                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-green-600 transition-colors">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-green-600 transition-colors">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-green-600 transition-colors">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-green-600 transition-colors">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                    <p class="text-gray-400 text-sm">
+                        Download aplikasi kami:
+                    </p>
+                    <div class="flex space-x-2 mt-2">
+                        <a href="#" class="bg-black px-3 py-1 rounded text-xs">App Store</a>
+                        <a href="#" class="bg-black px-3 py-1 rounded text-xs">Play Store</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 pt-8 text-center text-gray-400">
+                <p>&copy; 2023 Ijol-Ijol. Hak Cipta Dilindungi.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Floating Action Buttons -->
+    <div class="fab no-print" onclick="openModal()">
+        <i class="fas fa-plus"></i>
+    </div>
+    
+    <a href="https://wa.me/6281234567890?text=Halo,%20saya%20tertarik%20dengan%20produk%20di%20Ijol-Ijol" class="wa-fab no-print" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+    
+    <!-- Auth Modal -->
+    <div class="modal" id="authModal">
+        <div class="modal-content">
+            <button class="absolute top-4 right-4 text-gray-500 hover:text-gray-700" onclick="closeModal()">
+                <i class="fas fa-times text-2xl"></i>
+            </button>
+            
+            <div class="p-6">
+                <h2 class="text-2xl font-bold text-center mb-6">Selamat Datang di Ijol-Ijol</h2>
+                
+                <!-- Social Login Buttons -->
+                <div class="space-y-3 mb-6">
+                    <button class="w-full bg-red-600 text-white py-3 rounded-lg hover:bg-red-700 transition-colors flex items-center justify-center">
+                        <i class="fab fa-google mr-2"></i> Masuk dengan Google
+                    </button>
+                    <button class="w-full bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700 transition-colors flex items-center justify-center">
+                        <i class="fab fa-facebook-f mr-2"></i> Masuk dengan Facebook
+                    </button>
+                </div>
+                
+                <div class="relative my-6">
+                    <div class="absolute inset-0 flex items-center">
+                        <div class="w-full border-t border-gray-300"></div>
+                    </div>
+                    <div class="relative flex justify-center text-sm">
+                        <span class="px-2 bg-white text-gray-500">Atau masuk dengan email</span>
+                    </div>
+                </div>
+                
+                <!-- Login Form -->
+                <form id="loginForm" class="space-y-4">
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+                        <input type="email" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent" placeholder="your@email.com" required>
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Password</label>
+                        <input type="password" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent" placeholder="••••••••" required>
+                    </div>
+                    
+                    <div class="flex items-center justify-between">
+                        <label class="flex items-center">
+                            <input type="checkbox" class="rounded border-gray-300 text-green-600 focus:ring-green-500">
+                            <span class="ml-2 text-sm text-gray-600">Ingat saya</span>
+                        </label>
+                        <a href="#" class="text-sm text-green-600 hover:text-green-500">Lupa password?</a>
+                    </div>
+                    
+                    <button type="submit" class="w-full bg-green-600 text-white py-3 rounded-lg hover:bg-green-700 transition-colors font-semibold">
+                        Masuk
+                    </button>
+                </form>
+                
+                <div class="mt-6 text-center">
+                    <p class="text-sm text-gray-600">
+                        Belum punya akun? <a href="#" onclick="switchToRegister()" class="text-green-600 hover:text-green-500 font-medium">Daftar sekarang</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Register Modal (Hidden by default) -->
+    <div class="modal" id="registerModal">
+        <div class="modal-content">
+            <button class="absolute top-4 right-4 text-gray-500 hover:text-gray-700" onclick="closeRegisterModal()">
+                <i class="fas fa-times text-2xl"></i>
+            </button>
+            
+            <div class="p-6">
+                <h2 class="text-2xl font-bold text-center mb-6">Daftar Akun Ijol-Ijol</h2>
+                
+                <form id="registerForm" class="space-y-4">
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Nama Lengkap</label>
+                        <input type="text" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent" placeholder="Nama Anda" required>
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+                        <input type="email" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent" placeholder="your@email.com" required>
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">No. WhatsApp</label>
+                        <input type="tel" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent" placeholder="081234567890" required>
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Password</label>
+                        <input type="password" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent" placeholder="••••••••" required>
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Konfirmasi Password</label>
+                        <input type="password" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent" placeholder="••••••••" required>
+                    </div>
+                    
+                    <div class="flex items-center">
+                        <input type="checkbox" class="rounded border-gray-300 text-green-600 focus:ring-green-500" required>
+                        <span class="ml-2 text-sm text-gray-600">
+                            Saya setuju dengan <a href="#" class="text-green-600 hover:text-green-500">Syarat & Ketentuan</a>
+                        </span>
+                    </div>
+                    
+                    <button type="submit" class="w-full bg-green-600 text-white py-3 rounded-lg hover:bg-green-700 transition-colors font-semibold">
+                        Daftar Sekarang
+                    </button>
+                </form>
+                
+                <div class="mt-6 text-center">
+                    <p class="text-sm text-gray-600">
+                        Sudah punya akun? <a href="#" onclick="switchToLogin()" class="text-green-600 hover:text-green-500 font-medium">Masuk</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Product Detail Modal -->
+    <div class="product-detail-modal" id="productDetailModal">
+        <div class="product-detail-content">
+            <button class="absolute top-4 right-4 text-gray-500 hover:text-gray-700" onclick="closeProductDetail()">
+                <i class="fas fa-times text-2xl"></i>
+            </button>
+            
+            <div class="p-6">
+                <div class="flex flex-col md:flex-row gap-6">
+                    <!-- Product Image -->
+                    <div class="md:w-1/2">
+                        <div class="h-64 bg-gray-100 rounded-lg flex items-center justify-center mb-4" id="productImage">
+                            <i class="fas fa-seedling text-8xl text-gray-400"></i>
+                        </div>
+                        
+                        <!-- Product Badges -->
+                        <div class="flex gap-2 mb-4">
+                            <span class="badge badge-barter" id="detailBadgeBarter">Barter</span>
+                            <span class="badge badge-price" id="detailBadgePrice">Rp 50.000</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Product Info -->
+                    <div class="md:w-1/2">
+                        <h2 class="text-2xl font-bold mb-2" id="productTitle">Beras Organik 5kg</h2>
+                        <span class="inline-block bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm mb-4" id="productCategory">Pertanian</span>
+                        
+                        <p class="text-gray-700 mb-4" id="productDescription">
+                            Beras organik hasil panen sendiri, ditanam tanpa menggunakan pestisida kimia. Kualitas premium dengan tekstur pulen dan aroma khas.
+                        </p>
+                        
+                        <!-- Product Meta -->
+                        <div class="bg-gray-50 p-4 rounded-lg mb-4">
+                            <div class="flex justify-between mb-2">
+                                <span class="font-medium">Kondisi:</span>
+                                <span id="productCondition">Baru</span>
+                            </div>
+                            <div class="flex justify-between mb-2">
+                                <span class="font-medium">Lokasi:</span>
+                                <span id="productLocation">Kabupaten Bogor, Jawa Barat</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="font-medium">Diposting:</span>
+                                <span id="productDate">2 hari yang lalu</span>
+                            </div>
+                        </div>
+                        
+                        <!-- Owner Info -->
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 bg-green-600 rounded-full flex items-center justify-center text-white font-bold mr-3" id="ownerAvatar">
+                                P
+                            </div>
+                            <div>
+                                <h4 class="font-semibold" id="ownerName">Pak Tani</h4>
+                                <p class="text-sm text-gray-600" id="ownerStatus">Petani · Bergabung 6 bulan lalu</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Barter Options -->
+                        <div class="mb-4">
+                            <h4 class="font-semibold mb-2">Barter dengan:</h4>
+                            <div id="barterOptions">
+                                <div class="flex items-center mb-2">
+                                    <i class="fas fa-carrot text-orange-500 mr-2"></i>
+                                    <span>Sayuran segar</span>
+                                </div>
+                                <div class="flex items-center mb-2">
+                                    <i class="fas fa-tools text-gray-600 mr-2"></i>
+                                    <span>Alat pertanian</span>
+                                </div>
+                                <div class="flex items-center">
+                                    <i class="fas fa-shopping-basket text-green-600 mr-2"></i>
+                                    <span>Sembako</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Action Buttons -->
+                        <div class="flex gap-3">
+                            <button class="flex-1 bg-green-600 text-white py-3 rounded-lg hover:bg-green-700 transition-colors font-semibold" id="btnBarter" onclick="makeOffer()">
+                                <i class="fas fa-exchange-alt mr-2"></i> Tawar Barter
+                            </button>
+                            <button class="flex-1 bg-orange-500 text-white py-3 rounded-lg hover:bg-orange-600 transition-colors font-semibold" id="btnBuy" onclick="buyProduct()">
+                                <i class="fas fa-shopping-cart mr-2"></i> Beli Sekarang
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Toast Notification -->
+    <div class="toast" id="toast">
+        <span id="toastMessage">Notification message</span>
+    </div>
+    
+    <!-- Service Worker Registration -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/sw.js').then(registration => {
+                    console.log('SW registered: ', registration);
+                }).catch(registrationError => {
+                    console.log('SW registration failed: ', registrationError);
+                });
+            });
+        }
+    </script>
+    
+    <!-- JavaScript -->
+    <script>
+        // Product Data
+        const products = {
+            1: {
+                id: 1,
+                title: "Beras Organik 5kg",
+                category: "Pertanian",
+                icon: "fas fa-seedling",
+                description: "Beras organik hasil panen sendiri, ditanam tanpa menggunakan pestisida kimia. Kualitas premium dengan tekstur pulen dan aroma khas.",
+                condition: "Baru",
+                location: "Kabupaten Bogor, Jawa Barat",
+                date: "2 hari yang lalu",
+                owner: "Pak Tani",
+                ownerAvatar: "P",
+                ownerStatus: "Petani · Bergabung 6 bulan lalu",
+                type: "barter",
+                price: "",
+                barterOptions: [
+                    { icon: "fas fa-carrot", title: "Sayuran segar", desc: "Wortel, bayam, tomat, dll" },
+                    { icon: "fas fa-tools", title: "Alat pertanian", desc: "Cangkul, sekop, garu" },
+                    { icon: "fas fa-shopping-basket", title: "Sembako", desc: "Minyak goreng, gula, garam" }
+                ]
+            },
+            2: {
+                id: 2,
+                title: "Ikan Nila Segar 1kg",
+                category: "Perikanan",
+                icon: "fas fa-fish",
+                description: "Ikan nila segar hasil kolam sendiri, dipelihara dengan pakan alami tanpa bahan kimia. Dijamin segar langsung dari kolam.",
+                condition: "Baru",
+                location: "Kabupaten Purwakarta, Jawa Barat",
+                date: "1 hari yang lalu",
+                owner: "Nelayan",
+                ownerAvatar: "N",
+                ownerStatus: "Peternak Ikan · Bergabung 1 tahun lalu",
+                type: "cash",
+                price: "Rp 50.000",
+                barterOptions: [
+                    { icon: "fas fa-carrot", title: "Sayuran segar", desc: "Kangkung, bayam, sawi" },
+                    { icon: "fas fa-seedling", title: "Beras", desc: "Beras putih atau merah" },
+                    { icon: "fas fa-utensils", title: "Bumbu dapur", desc: "Bawang, cabai, kemiri" }
+                ]
+            },
+            3: {
+                id: 3,
+                title: "Cangkul Sekop",
+                category: "Alat Tanam",
+                icon: "fas fa-tools",
+                description: "Cangkul sekop kondisi 90%, masih sangat layak pakai. Gagang kayu jati yang kuat dan mata cangkul baja yang masih tajam.",
+                condition: "Bekas (90%)",
+                location: "Kota Depok, Jawa Barat",
+                date: "3 hari yang lalu",
+                owner: "Gardener",
+                ownerAvatar: "G",
+                ownerStatus: "Pecinta Tanaman · Bergabung 8 bulan lalu",
+                type: "barter",
+                price: "",
+                barterOptions: [
+                    { icon: "fas fa-seedling", title: "Bibit tanaman", desc: "Tomat, cabai, terong" },
+                    { icon: "fas fa-leaf", title: "Pupuk organik", desc: "Kompos, pupuk kandang" },
+                    { icon: "fas fa-tint", title: "Pestisida alami", desc: "Neem oil, dll" }
+                ]
+            },
+            4: {
+                id: 4,
+                title: "Sofa Minimalis 2 Seater",
+                category: "Rumah Tangga",
+                icon: "fas fa-home",
+                description: "Sofa minimalis 2 seater warna abu-abu, bahan fabric yang mudah dibersihkan. Kondisi masih bagus, tidak ada noda atau sobek.",
+                condition: "Bekas (85%)",
+                location: "Kota Bekasi, Jawa Barat",
+                date: "5 hari yang lalu",
+                owner: "Home",
+                ownerAvatar: "H",
+                ownerStatus: "Ibu Rumah Tangga · Bergabung 3 bulan lalu",
+                type: "cash",
+                price: "Rp 75.000",
+                barterOptions: [
+                    { icon: "fas fa-couch", title: "Perabot lain", desc: "Meja, kursi, lemari" },
+                    { icon: "fas fa-tv", title: "Elektronik", desc: "TV, kipas angin" },
+                    { icon: "fas fa-blender", title: "Alat dapur", desc: "Blender, rice cooker" }
+                ]
+            },
+            5: {
+                id: 5,
+                title: "Kopi Arabika 1kg",
+                category: "Hasil Bumi",
+                icon: "fas fa-leaf",
+                description: "Kopi arabika hasil kebun sendiri, ditanam di lereng pegunungan dengan ketinggian 1200 mdpl. Sudah melalui proses fermentasi dan sangrai yang sempurna.",
+                condition: "Baru",
+                location: "Kabupaten Bandung, Jawa Barat",
+                date: "1 minggu yang lalu",
+                owner: "Farmer",
+                ownerAvatar: "F",
+                ownerStatus: "Petani Kopi · Bergabung 2 tahun lalu",
+                type: "barter",
+                price: "",
+                barterOptions: [
+                    { icon: "fas fa-cube", title: "Gula", desc: "Gula aren atau gula pasir" },
+                    { icon: "fas fa-bread-slice", title: "Makanan", desc: "Roti, kue, snack" },
+                    { icon: "fas fa-shopping-basket", title: "Sembako", desc: "Minyak, telur, tepung" }
+                ]
+            },
+            6: {
+                id: 6,
+                title: "Pisang Raja 1 Sisir",
+                category: "Buah-buahan",
+                icon: "fas fa-apple-alt",
+                description: "Pisang raja manis segar langsung dari kebun, dipetik saat sudah matang sempurna di pohon. Memiliki daging yang tebal, manis alami.",
+                condition: "Baru",
+                location: "Kabupaten Sukabumi, Jawa Barat",
+                date: "Hari ini",
+                owner: "Kebun",
+                ownerAvatar: "K",
+                ownerStatus: "Pemilik Kebun · Bergabung 4 bulan lalu",
+                type: "cash",
+                price: "Rp 30.000",
+                barterOptions: [
+                    { icon: "fas fa-apple-alt", title: "Buah lain", desc: "Mangga, jambu, jeruk" },
+                    { icon: "fas fa-carrot", title: "Sayuran", desc: "Wortel, kentang, kol" },
+                    { icon: "fas fa-egg", title: "Protein", desc: "Telur, tahu, tempe" }
+                ]
+            },
+            7: {
+                id: 7,
+                title: "Wortel Segar 1kg",
+                category: "Sayuran",
+                icon: "fas fa-carrot",
+                description: "Wortel segar hasil panen sendiri, ditanam secara organik tanpa pestisida. Warna oranye cerah dengan tekstur renyah.",
+                condition: "Baru",
+                location: "Kabupaten Cianjur, Jawa Barat",
+                date: "Hari ini",
+                owner: "Sayur",
+                ownerAvatar: "S",
+                ownerStatus: "Petani Sayur · Bergabung 5 bulan lalu",
+                type: "barter",
+                price: "",
+                barterOptions: [
+                    { icon: "fas fa-seedling", title: "Beras", desc: "Beras putih atau merah" },
+                    { icon: "fas fa-fish", title: "Ikan", desc: "Ikan segar atau asin" },
+                    { icon: "fas fa-shopping-basket", title: "Sembako", desc: "Minyak, gula, garam" }
+                ]
+            },
+            8: {
+                id: 8,
+                title: "Lemari Buku Kayu Jati",
+                category: "Rumah Tangga",
+                icon: "fas fa-home",
+                description: "Lemari buku kayu jati asli, finishing natural. Kondisi masih sangat bagus, tidak ada keropos atau rusak.",
+                condition: "Bekas (95%)",
+                location: "Kota Bogor, Jawa Barat",
+                date: "1 minggu yang lalu",
+                owner: "Book",
+                ownerAvatar: "B",
+                ownerStatus: "Pecinta Buku · Bergabung 1 tahun lalu",
+                type: "barter",
+                price: "",
+                barterOptions: [
+                    { icon: "fas fa-book", title: "Buku", desc: "Novel, komik, ensiklopedia" },
+                    { icon: "fas fa-laptop", title: "Elektronik", desc: "Laptop, tablet, HP" },
+                    { icon: "fas fa-tshirt", title: "Fashion", desc: "Baju, celana, jaket" }
+                ]
+            }
+        };
+        
+        // State management
+        let currentFilter = 'all';
+        let currentSearch = '';
+        
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            displayProducts(products);
+            
+            // Add smooth scroll behavior
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+            
+            // Form submissions
+            document.getElementById('loginForm').addEventListener('submit', handleLogin);
+            document.getElementById('registerForm').addEventListener('submit', handleRegister);
+        });
+        
+        // Display products
+        function displayProducts(productsToShow) {
+            const productGrid = document.getElementById('productGrid');
+            const noResults = document.getElementById('noResults');
+            
+            productGrid.innerHTML = '';
+            
+            if (Object.keys(productsToShow).length === 0) {
+                noResults.classList.remove('hidden');
+                return;
+            } else {
+                noResults.classList.add('hidden');
+            }
+            
+            Object.values(productsToShow).forEach(product => {
+                const productCard = createProductCard(product);
+                productGrid.appendChild(productCard);
+            });
+        }
+        
+        // Create product card
+        function createProductCard(product) {
+            const card = document.createElement('div');
+            card.className = 'product-card bg-white rounded-lg shadow-md overflow-hidden';
+            card.onclick = () => showProductDetail(product.id);
+            
+            const badge = product.type === 'cash' 
+                ? `<span class="badge badge-price">${product.price}</span>`
+                : `<span class="badge badge-barter">Barter</span>`;
+            
+            card.innerHTML = `
+                ${badge}
+                <div class="h-48 bg-gray-100 flex items-center justify-center">
+                    <i class="${product.icon} text-6xl text-gray-400"></i>
+                </div>
+                <div class="p-4">
+                    <h3 class="font-semibold text-lg mb-2">${product.title}</h3>
+                    <p class="text-gray-600 text-sm mb-3 line-clamp-2">${product.description}</p>
+                    <div class="flex items-center justify-between text-sm">
+                        <div class="flex items-center">
+                            <div class="w-6 h-6 bg-green-600 rounded-full flex items-center justify-center text-white text-xs mr-2">
+                                ${product.ownerAvatar}
+                            </div>
+                            <span class="text-gray-600">${product.owner}</span>
+                        </div>
+                        <span class="bg-green-100 text-green-800 px-2 py-1 rounded-full text-xs">
+                            ${product.category}
+                        </span>
+                    </div>
+                </div>
+            `;
+            
+            return card;
+        }
+        
+        // Search products
+        function searchProducts(event) {
+            if (event && event.type === 'keyup' && event.key !== 'Enter') {
+                return;
+            }
+            
+            const searchInput = document.getElementById('searchInput');
+            const searchTerm = searchInput.value.toLowerCase().trim();
+            
+            currentSearch = searchTerm;
+            
+            // Update title
+            const itemsTitle = document.getElementById('itemsTitle');
+            if (searchTerm) {
+                itemsTitle.textContent = `Hasil Pencarian: "${searchTerm}"`;
+            } else {
+                itemsTitle.textContent = 'Produk Unggulan';
+            }
+            
+            // Filter and display
+            let filteredProducts = filterProducts();
+            displayProducts(filteredProducts);
+            
+            // Scroll to products section
+            document.getElementById('productGrid').scrollIntoView({ behavior: 'smooth' });
+        }
+        
+        // Filter by category
+        function filterByCategory(category) {
+            currentFilter = category;
+            currentSearch = '';
+            
+            // Update search input
+            document.getElementById('searchInput').value = '';
+            
+            // Update title
+            const itemsTitle = document.getElementById('itemsTitle');
+            itemsTitle.textContent = `Kategori: ${category}`;
+            
+            // Update filter buttons
+            const filterBtns = document.querySelectorAll('.filter-btn');
+            filterBtns.forEach(btn => {
+                btn.classList.remove('bg-green-600', 'text-white');
+                btn.classList.add('bg-gray-200', 'text-gray-700');
+                if (btn.textContent === category) {
+                    btn.classList.remove('bg-gray-200', 'text-gray-700');
+                    btn.classList.add('bg-green-600', 'text-white');
+                }
+            });
+            
+            // Filter and display
+            let filteredProducts = filterProducts();
+            displayProducts(filteredProducts);
+            
+            // Scroll to products section
+            document.getElementById('productGrid').scrollIntoView({ behavior: 'smooth' });
+        }
+        
+        // Reset filter
+        function resetFilter() {
+            currentFilter = 'all';
+            currentSearch = '';
+            
+            // Update search input
+            document.getElementById('searchInput').value = '';
+            
+            // Update title
+            const itemsTitle = document.getElementById('itemsTitle');
+            itemsTitle.textContent = 'Produk Unggulan';
+            
+            // Update filter buttons
+            const filterBtns = document.querySelectorAll('.filter-btn');
+            filterBtns.forEach(btn => {
+                btn.classList.remove('bg-green-600', 'text-white');
+                btn.classList.add('bg-gray-200', 'text-gray-700');
+                if (btn.textContent === 'Semua') {
+                    btn.classList.remove('bg-gray-200', 'text-gray-700');
+                    btn.classList.add('bg-green-600', 'text-white');
+                }
+            });
+            
+            // Display all products
+            displayProducts(products);
+        }
+        
+        // Filter products based on current state
+        function filterProducts() {
+            let filtered = {...products};
+            
+            // Apply category filter
+            if (currentFilter !== 'all') {
+                filtered = Object.fromEntries(
+                    Object.entries(filtered).filter(([key, product]) => 
+                        product.category === currentFilter
+                    )
+                );
+            }
+            
+            // Apply search filter
+            if (currentSearch) {
+                filtered = Object.fromEntries(
+                    Object.entries(filtered).filter(([key, product]) => 
+                        product.title.toLowerCase().includes(currentSearch) ||
+                        product.description.toLowerCase().includes(currentSearch) ||
+                        product.category.toLowerCase().includes(currentSearch)
+                    )
+                );
+            }
+            
+            return filtered;
+        }
+        
+        // Show product detail
+        function showProductDetail(productId) {
+            const product = products[productId];
+            
+            // Update product detail content
+            document.getElementById('productTitle').textContent = product.title;
+            document.getElementById('productCategory').textContent = product.category;
+            document.getElementById('productDescription').textContent = product.description;
+            document.getElementById('productCondition').textContent = product.condition;
+            document.getElementById('productLocation').textContent = product.location;
+            document.getElementById('productDate').textContent = product.date;
+            document.getElementById('ownerName').textContent = product.owner;
+            document.getElementById('ownerAvatar').textContent = product.ownerAvatar;
+            document.getElementById('ownerStatus').textContent = product.ownerStatus;
+            
+            // Update product image
+            const productImage = document.getElementById('productImage');
+            productImage.innerHTML = `<i class="${product.icon} text-8xl text-gray-400"></i>`;
+            
+            // Update barter options
+            const barterOptions = document.getElementById('barterOptions');
+            let barterHTML = '';
+            
+            product.barterOptions.forEach(option => {
+                barterHTML += `
+                    <div class="flex items-center mb-2">
+                        <i class="${option.icon} mr-2"></i>
+                        <div>
+                            <div class="font-medium">${option.title}</div>
+                            <div class="text-sm text-gray-600">${option.desc}</div>
+                        </div>
+                    </div>
+                `;
+            });
+            
+            barterOptions.innerHTML = barterHTML;
+            
+            // Update badges
+            const badgeBarter = document.getElementById('detailBadgeBarter');
+            const badgePrice = document.getElementById('detailBadgePrice');
+            
+            if (product.type === 'barter') {
+                badgeBarter.style.display = 'inline-block';
+                badgePrice.style.display = 'none';
+            } else {
+                badgeBarter.style.display = 'none';
+                badgePrice.style.display = 'inline-block';
+                badgePrice.textContent = product.price;
+            }
+            
+            // Update buttons
+            const btnBarter = document.getElementById('btnBarter');
+            const btnBuy = document.getElementById('btnBuy');
+            
+            if (product.type === 'barter') {
+                btnBarter.style.display = 'flex';
+                btnBuy.style.display = 'none';
+            } else {
+                btnBarter.style.display = 'none';
+                btnBuy.style.display = 'flex';
+            }
+            
+            // Show modal
+            document.getElementById('productDetailModal').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+        
+        // Modal functions
+        function openModal() {
+            document.getElementById('authModal').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+        
+        function closeModal() {
+            document.getElementById('authModal').classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+        
+        function closeProductDetail() {
+            document.getElementById('productDetailModal').classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+        
+        function switchToRegister() {
+            closeModal();
+            setTimeout(() => {
+                document.getElementById('registerModal').classList.add('active');
+                document.body.style.overflow = 'hidden';
+            }, 300);
+        }
+        
+        function switchToLogin() {
+            document.getElementById('registerModal').classList.remove('active');
+            setTimeout(() => {
+                openModal();
+            }, 300);
+        }
+        
+        function closeRegisterModal() {
+            document.getElementById('registerModal').classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+        
+        // Mobile menu toggle
+        function toggleMobileMenu() {
+            const mobileMenu = document.getElementById('mobileMenu');
+            mobileMenu.classList.toggle('active');
+        }
+        
+        // Form handlers
+        function handleLogin(e) {
+            e.preventDefault();
+            showToast('Login berhasil! Selamat datang di Ijol-Ijol');
+            closeModal();
+        }
+        
+        function handleRegister(e) {
+            e.preventDefault();
+            showToast('Registrasi berhasil! Silakan login');
+            closeRegisterModal();
+        }
+        
+        function makeOffer() {
+            showToast('Fitur tawar barter akan segera hadir!');
+            closeProductDetail();
+        }
+        
+        function buyProduct() {
+            showToast('Fitur pembelian akan segera hadir!');
+            closeProductDetail();
+        }
+        
+        // Toast notification
+        function showToast(message) {
+            const toast = document.getElementById('toast');
+            const toastMessage = document.getElementById('toastMessage');
+            
+            toastMessage.textContent = message;
+            toast.classList.add('show');
+            
+            setTimeout(() => {
+                toast.classList.remove('show');
+            }, 3000);
+        }
+        
+        // Close modals when clicking outside
+        window.addEventListener('click', function(e) {
+            const authModal = document.getElementById('authModal');
+            const registerModal = document.getElementById('registerModal');
+            const productModal = document.getElementById('productDetailModal');
+            
+            if (e.target === authModal) {
+                closeModal();
+            }
+            
+            if (e.target === registerModal) {
+                closeRegisterModal();
+            }
+            
+            if (e.target === productModal) {
+                closeProductDetail();
+            }
+        });
+        
+        // Performance: Lazy loading for images (if we had real images)
+        if ('IntersectionObserver' in window) {
+            const imageObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const img = entry.target;
+                        img.src = img.dataset.src;
+                        img.classList.remove('lazy');
+                        observer.unobserve(img);
+                    }
+                });
+            });
+            
+            document.querySelectorAll('img.lazy').forEach(img => {
+                imageObserver.observe(img);
+            });
+        }
+    </script>
+</body>
+</html>
